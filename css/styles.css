@@ -1,0 +1,455 @@
+/* Делаю пока все во одном файле, позже по необходимости могу разделить на общий и постраничные файлы css */
+
+/* текст цвет основной #757575 */
+/* текст цвет заголовков #212121 */
+/* текст цвет акцент #2196F3 */
+/* текст цвет белый #FFFFFF*/
+/* фон основной белый #FFFFFF */
+/* фон серый  #F5F4FA */
+/* фон акцент #2196F3 */
+/* фон секции шапка, подвал #2F303A */
+/* цвета логотипа #000000  #2196F3 #FFFFFF */
+
+/* Шрифты: все normal
+/* Roboto 400, 500, 700, 900  */
+/* Raleway 700 */
+/* letter-spacing: 0.03em общий текст*/
+/* letter-spacing: 0.02em навигация  */
+/* letter-spacing: 0.06em секция шапки */
+:root {
+  --text-main: #757575;
+  --text-header: #212121;
+  --text-accent: #2196f3;
+  --text-white: #ffffff;
+  --text-adress: rgba(255, 255, 255, 0.6);
+  --bgd-primary: #ffffff;
+  --bgd-second: #f5f4fa;
+  --bgd-accent: #2196f3;
+  --bgd-border: #eeeeee;
+  --bgd-line: #ececec;
+  --bgd-header-footer: #2f303a;
+}
+/* Пока отдельно указала белый цвет  для фона и для текста */
+/* Разные переменные, если нужно будет поменять переменную цвета текста, не затронет цвет фона и наоборот */
+
+/* Общие параметры на страницах index.html, protfolio.html */
+
+/* Убираем символы списка и паддинги списков*/
+.list {
+  list-style: none;
+  padding: 0px;
+}
+
+/* Убираем марджины у списков, заголовков, ссылках, адресах */
+.studio-nav,
+.studio-contacts,
+.features-text,
+.footer-adress,
+.adress-mail,
+.primary-title,
+.list,
+.features-item,
+.filter-item,
+.team-caption,
+.team-position,
+.section-portfolio h1,
+.portfolio-title {
+  margin: 0px;
+}
+
+.container.studio-header,
+.studio-nav,
+.studio-list,
+.studio-contacts {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  /* outline: 2px solid tomato !important; */
+}
+
+.container .section-footer {
+  padding-top: 60px;
+  padding-left: 60px;
+}
+.studio-header {
+  padding-top: 24px;
+  padding-bottom: 25px;
+}
+
+.studio-page,
+.portfolio-page {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-size: 14px;
+  color: var(--text-main);
+  letter-spacing: 0.03em;
+}
+
+/* Параметры фона секций шапка и подвал */
+.section-primary,
+.section-footer {
+  background: var(--bgd-header-footer);
+}
+
+/* Задаем паддинги для секций, у которых они есть */
+.section-features,
+.section-team,
+.section-portfolio {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 94px;
+  padding-bottom: 94px;
+
+  text-align: center;
+}
+.section-activity {
+  padding-bottom: 94px;
+  text-align: center;
+}
+/* Пока не знаю как скрыть заголовок h1 в секции section-portfolio, ставлю на 24px (высота заголовка h1) меньше верхний паддинг */
+/* так как расстояние между секциями должно быть 94px */
+.section-portfolio {
+  padding-top: 70px;
+  border-top: 1px solid var(--bgd-line);
+}
+/* Пока не знаю как скрыть заголовок h2 в секции section-features, ставлю на 41px (высота заголовка h1) меньше верхний паддинг */
+/* так как расстояние между секциями должно быть 94px */
+.section-features {
+  padding-top: 53px;
+}
+
+/* Задаем ширину секций, имеющих больший размер, чем основной у контейнеров: Шапка,Подвал и Наша команда  */
+.section-primary,
+.section-team,
+.section-footer,
+.section-portfolio {
+  width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.studio-nav .logo {
+  margin-right: 93px;
+}
+
+.studio-list-item:not(:last-child),
+.studio-contacts-item:not(:last-child) {
+  margin-right: 50px;
+}
+
+/* Параметры заголовков h2 страницы index.html*/
+.section-title {
+  margin: 0px;
+
+  color: var(--text-header);
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 1.16;
+}
+
+.link,
+.logo,
+.primary-button,
+.adress-email,
+.adress-tel {
+  text-decoration: none;
+}
+
+/* Параметры логотипа */
+.logo {
+  font-family: Raleway, sans-serif;
+  color: var(--text-header);
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+}
+
+/* Форматируем логотип */
+.logo-part-one {
+  color: var(--text-accent);
+}
+
+.logo-part-two {
+  color: var(--text-white);
+}
+
+/* Параметры ссылок навигации по сайту */
+.studio-list-item .link {
+  color: var(--text-header);
+}
+
+/* Параметры ссылок для обратной связи */
+.studio-contacts-item .link {
+  color: var(--text-main);
+}
+.studio-list,
+.studio-contacts {
+  letter-spacing: 0.02em;
+}
+
+/*  hover и focus для ссылок навигации по сайту*/
+.link.current,
+.link:hover,
+.link:focus {
+  color: var(--text-accent);
+}
+
+.section-primary {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding: 200px 452px;
+
+  text-align: center;
+}
+
+/* Параметры заголовка h1 на странице Studio */
+.primary-title {
+  margin-bottom: 30px;
+
+  color: var(--text-white);
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 1.36;
+  letter-spacing: 0.06em;
+
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* Параметры кнопки */
+.primary-button {
+  padding: 10px 32px;
+
+  color: var(--text-white);
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+
+  border: none;
+  border-radius: 4px;
+  background-color: var(--bgd-accent);
+}
+
+.features-list {
+  display: flex;
+}
+
+.section-features .section-title {
+  margin: 0px;
+
+  color: var(--text-white);
+}
+
+/* Параметры заголовков h3 страницы index.html */
+.features-item {
+  margin-bottom: 10px;
+
+  color: var(--text-header);
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+}
+
+/* Параметры параграфов секции section-features */
+.features-list {
+  line-height: 1.71;
+}
+
+.features-card {
+  flex-basis: calc((100%-3 * 30) / 4);
+  text-align: start;
+}
+
+.features-card:not(:nth-child(4n)) {
+  margin-right: 30px;
+}
+
+.activity-list {
+  display: flex;
+  align-items: flex-end;
+}
+.section-activity .section-title {
+  margin-bottom: 50px;
+}
+.activity-card:not(:nth-child(3n)) {
+  margin-right: 30px;
+}
+
+.activity-card {
+  flex-basis: calc((100%-2 * 30) / 3);
+}
+
+.section-team {
+  background-color: var(--bgd-second);
+}
+.team-list {
+  display: flex;
+}
+
+.section-team .section-title {
+  margin-bottom: 50px;
+}
+.team-card:not(:nth-child(4n)) {
+  margin-right: 30px;
+}
+
+.team-card {
+  width: 270px;
+  height: 368px;
+  text-align: center;
+}
+/*Параметры заголовка под фото членов команды  */
+.team-caption {
+  margin-bottom: 10px;
+
+  color: var(--text-header);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.19;
+}
+
+/* Параметры для записи - должности члена команды */
+.team-position {
+  margin-bottom: 30px;
+
+  color: var(--text-main);
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 1.19;
+}
+
+.team-card img {
+  margin-bottom: 30px;
+}
+
+/* Футтер пока не делаю флексом, пока нет остального конента в нем */
+/* Параметры для строк адреса */
+.adress-mail {
+  margin-bottom: 9px;
+
+  color: var(--text-white);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.71;
+}
+
+.adress-email,
+.adress-tel {
+  display: block;
+
+  color: var(--text-adress);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.71;
+}
+
+.adress-email {
+  margin-bottom: 9px;
+}
+
+.section-footer {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.section-footer .logo {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.portfolio-filter,
+.portfolio-item {
+  display: flex;
+}
+.portfolio-filter {
+  justify-content: center;
+}
+.portfolio-item {
+  flex-wrap: wrap;
+}
+
+.portfolio-filter {
+  margin-bottom: 34px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-bottom: 16px;
+}
+
+.portfolio-card:not(:nth-child(3n)) {
+  margin-right: 30px;
+}
+.portfolio-card:not(:nth-last-child(-n + 3)) {
+  margin-bottom: 30px;
+}
+
+.portfolio-card {
+  flex-basis: calc((100%- 2 * 30px) / 3);
+}
+/* Параметры конопок-фильтров в портфолио  */
+.filter-button {
+  align-items: flex-start;
+  margin-right: 8px;
+  padding: 6px 22px;
+
+  color: var(--text-header);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.62;
+  letter-spacing: 0.03em;
+  text-align: center;
+
+  background-color: var(--bgd-second);
+  border: none;
+  border-radius: 4px;
+}
+.filter-button:hover,
+.filter-button:focus {
+  color: var(--text-white);
+  background-color: var(--bgd-accent);
+}
+
+.portfolio-title {
+  margin-bottom: 4px;
+
+  color: var(--text-header);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+}
+.section-portfolio h1 {
+  color: var(--text-white);
+}
+
+/* Делаю бордер для части карточки */
+.portfolio-card-caption {
+  padding: 20px 24px;
+  border-right: 1px solid var(--bgd-border);
+  border-bottom: 1px solid var(--bgd-border);
+  border-left: 1px solid var(--bgd-border);
+
+  text-align: left;
+  /* outline: 2px solid red !important; */
+}
+
+/*  Параметры пунктов фильтров для портфолио */
+.filter-item {
+  color: var(--text-main);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.87;
+}
+
+/* ...........Для тестирования.................. */
