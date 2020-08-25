@@ -87,7 +87,7 @@ img {
   padding-left: 15px;
   padding-right: 15px;
 
-  /* outline: 2px solid tomato !important; */
+  outline: 2px solid tomato !important;
 }
 
 /* Доп.параметры для контейнера футтера */
@@ -115,7 +115,7 @@ img {
 /* Параметры фона секций шапка и подвал */
 .section-primary,
 .section-footer {
-  background: var(--bgd-header-footer);
+  background-color: var(--bgd-header-footer);
 }
 
 /* Марджины для секций и центрирование: Особенности, Наша команда, Портфолио */
@@ -165,7 +165,7 @@ img {
 .section-team,
 .section-footer,
 .section-portfolio {
-  width: 1600px;
+  max-width: 1600px;
 }
 
 /* Правый марджин между логотипом и ссылками на страницы в основном nav */
@@ -244,9 +244,11 @@ img {
 .section-primary {
   margin-top: 0px;
   margin-bottom: 0px;
-  padding: 200px 452px;
+  padding: 200px 0px;
 
-  text-align: center;
+  height: 600px;
+  background-image: url('../images/img-overlay.svg'),
+    url('../images/primary.jpg');
 }
 
 /* Параметры заголовка h1 на странице Studio */
@@ -259,14 +261,13 @@ img {
   line-height: 1.36;
   letter-spacing: 0.06em;
 
-  text-align: center;
   text-transform: uppercase;
 }
 
 /* Параметры кнопки в секции Шапка*/
 .primary-button {
-  padding: 10px 32px;
-
+  padding: 10px;
+  min-width: 200px;
   color: var(--text-white);
   font-family: inherit;
   font-weight: 700;
@@ -277,6 +278,7 @@ img {
   border: none;
   border-radius: 4px;
   background-color: var(--bgd-accent);
+  cursor: pointer;
 }
 
 /* Параметры заголовка в секции Особенности */
@@ -414,6 +416,7 @@ img {
   margin-right: auto;
   margin-left: auto;
   padding-bottom: 16px;
+  /* cursor: pointer; */
 }
 
 /* Марджины для сетки многострочного контейнера */
@@ -426,8 +429,8 @@ img {
 
 /* Отностительные размеры для пуктов контейнера */
 .portfolio-card {
-  width: calc((100%- 2 * 30px) / 3);
-  /* width: 370px; */
+  /* width: calc((100%- 2 * 30px) / 3); */
+  width: 370px;
 }
 
 /* Параметры конопок-фильтров в портфолио  */
@@ -446,6 +449,7 @@ img {
   background-color: var(--bgd-second);
   border: none;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 .filter-button:hover,
