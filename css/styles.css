@@ -46,41 +46,38 @@ img {
 .list {
   list-style: none;
   padding: 0px;
+  margin: 0px;
 }
 
-/* Убираем марджины у списков, заголовков, ссылках, адресах */
-.studio-nav,
-.studio-contacts,
-.features-text,
-.footer-adress,
-.adress-mail,
-.primary-title,
-.list,
-.features-item,
-.filter-item,
-.team-caption,
-.team-position,
-.section-portfolio h1,
-.portfolio-title {
+/* Убираю подчеркивания под ссылками */
+.link {
+  text-decoration: none;
+  margin: 0px;
+}
+
+/* Убираем марджины у списков, заголовков, ссылках, адресах по классу nomargin */
+.nomargin,
+.title {
   margin: 0px;
 }
 
 /* Параметры для контейнеров верхней линии */
-.studio-header,
-.studio-nav,
-.studio-list,
-.studio-contacts,
-.features-list,
-.team-list,
-.activity-list,
-.portfolio-filter,
-.portfolio-item {
+
+.flexbox {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+/* Марджины для секций и центрирование */
+.section {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
 /* Параметры основного контейнера макета */
+
 .container {
   width: 1200px;
   margin-left: auto;
@@ -117,20 +114,6 @@ img {
 .section-primary,
 .section-footer {
   background-color: var(--bgd-header-footer);
-}
-
-/* Марджины для секций и центрирование: Особенности, Наша команда, Портфолио */
-
-.section-header,
-.section-primary,
-.section-features,
-.section-team,
-.section-activity,
-.section-footer,
-.section-portfolio {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
 }
 
 /* Паддинги для секций */
@@ -188,15 +171,6 @@ img {
   font-weight: bold;
   font-size: 36px;
   line-height: 1.16;
-}
-
-/* Убираю подчеркивания под ссылками */
-.link,
-.logo,
-.primary-button,
-.adress-email,
-.adress-tel {
-  text-decoration: none;
 }
 
 /* Параметры логотипа */
@@ -433,12 +407,14 @@ img {
 }
 
 .footer-contacts {
+  width: 231px;
   margin-right: 70px;
 }
 
-.footer-social p {
+.footer-social > .text {
   color: var(--text-white);
   text-transform: uppercase;
+  margin-bottom: 20px;
 }
 
 .footer-item::after {
@@ -528,7 +504,7 @@ img {
 }
 
 /* Заголовки под карточками в списке Портфолио */
-.portfolio-title {
+.portfolio-card .title {
   margin-bottom: 4px;
 
   color: var(--text-header);
