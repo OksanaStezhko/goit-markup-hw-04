@@ -28,6 +28,7 @@
   --bgd-border: #eeeeee;
   --bgd-line: #ececec;
   --bgd-header-footer: #2f303a;
+  --bdg-social: rgba(255, 255, 255, 0.1);
 }
 /* Пока отдельно указала белый цвет  для фона и для текста */
 /* Разные переменные, если нужно будет поменять переменную цвета текста, не затронет цвет фона и наоборот */
@@ -87,7 +88,7 @@ img {
   padding-left: 15px;
   padding-right: 15px;
 
-  outline: 2px solid tomato !important;
+  /* outline: 2px solid tomato !important; */
 }
 
 /* Доп.параметры для контейнера футтера */
@@ -247,7 +248,11 @@ img {
   padding: 200px 0px;
 
   height: 600px;
-  background-image: url('../images/img-overlay.svg'),
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
     url('../images/primary.jpg');
 }
 
@@ -303,6 +308,28 @@ img {
   width: 270px;
   text-align: start;
   line-height: 1.71;
+}
+.features-card::before {
+  display: block;
+  content: '';
+  height: 120px;
+  margin-bottom: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--bgd-second);
+}
+
+.features-card:nth-child(1)::before {
+  background-image: url(../images/feature1.svg);
+}
+.features-card:nth-child(2)::before {
+  background-image: url(../images/feature2.svg);
+}
+.features-card:nth-child(3)::before {
+  background-image: url(../images/feature3.svg);
+}
+.features-card:nth-child(4)::before {
+  background-image: url(../images/feature4.svg);
 }
 
 /* Параметры списка секции Чем мы занимаемся */
@@ -366,6 +393,11 @@ img {
 
 /* Футтер пока не делаю флексом, пока нет остального конента в нем */
 /* Параметры для строк адреса */
+.section-footer .container,
+.footer-list {
+  display: flex;
+}
+
 .adress-mail {
   margin-bottom: 9px;
 
@@ -400,6 +432,43 @@ img {
   margin-bottom: 20px;
 }
 
+.footer-contacts {
+  margin-right: 70px;
+}
+
+.footer-social p {
+  color: var(--text-white);
+  text-transform: uppercase;
+}
+
+.footer-item::after {
+  display: inline-block;
+  margin-right: 30px;
+  content: '';
+  height: 44px;
+  width: 44px;
+  background-color: var(--bdg-social);
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.footer-item:nth-child(1)::after {
+  background-image: url(../images/instagram.svg);
+}
+.footer-item:nth-child(2)::after {
+  background-image: url(../images/twitter.svg);
+}
+.footer-item:nth-child(3)::after {
+  background-image: url(../images/facebook.svg);
+}
+.footer-item:nth-child(4)::after {
+  background-image: url(../images/linkedin.svg);
+}
+
+.footer-item:not(:nth-last-child()) {
+  margin-right: 10px;
+}
 /* Параметры для страницы портфолио */
 .portfolio-filter {
   justify-content: center;
