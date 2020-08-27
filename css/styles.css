@@ -206,6 +206,7 @@ img {
 .studio-list,
 .studio-contacts {
   letter-spacing: 0.02em;
+  font-weight: 500;
 }
 
 /*  hover и focus для ссылок навигации по сайту*/
