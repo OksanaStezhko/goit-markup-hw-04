@@ -89,13 +89,13 @@ img {
 }
 
 /* Доп.параметры для контейнера футтера */
-.section-footer {
+.footer {
   padding-top: 60px;
   padding-left: 60px;
 }
 
 /* Доп.параметры для контейнера шапки */
-.studio-header {
+.header > .container {
   padding-top: 24px;
   padding-bottom: 25px;
 }
@@ -111,32 +111,32 @@ img {
 }
 
 /* Параметры фона секций шапка и подвал */
-.section-primary,
-.section-footer {
+.primary,
+.footer {
   background-color: var(--bgd-header-footer);
 }
 
 /* Паддинги для секций */
-.section-features,
-.section-team,
-.section-portfolio {
+.features,
+.team,
+.portfolio {
   padding-top: 94px;
   padding-bottom: 94px;
 }
 
 /* Паддинг секции "Чем мы занимаемся" */
-.section-activity {
+.activity {
   padding-bottom: 94px;
 }
-/* Пока не знаю как правильно скрыть заголовок h1 в секции section-portfolio, ставлю на 24px (высота заголовка h1) меньше верхний паддинг */
+/* Пока не знаю как правильно скрыть заголовок h1 в секции portfolio, ставлю на 24px (высота заголовка h1) меньше верхний паддинг */
 /* так как расстояние между секциями должно быть 94px и делаю цвет таких загоовков в цвет фона */
-.section-portfolio {
+.portfolio {
   padding-top: 70px;
   border-top: 1px solid var(--bgd-line);
 }
-/* Пока не знаю как скрыть заголовок h2 в секции section-features, ставлю на 41px (высота заголовка h1) меньше верхний паддинг */
+/* Пока не знаю как скрыть заголовок h2 в секции features, ставлю на 41px (высота заголовка h1) меньше верхний паддинг */
 /* так как расстояние между секциями должно быть 94px  и делаю цвет таких загоовков в цвет фона */
-.section-features {
+.features {
   padding-top: 53px;
 }
 
@@ -144,11 +144,11 @@ img {
 /* поэтому оставляю ширину секций, имеющих больший размер, чем основной у контейнеров: Шапка, */
 /* Подвал и Наша команда  */
 /* Есть линия на странице портфолио между Верхней линией и Шапкой, как ограничить ее длину без этого параметра */
-.section-header,
-.section-primary,
-.section-team,
-.section-footer,
-.section-portfolio {
+.header,
+.primary,
+.team,
+.footer,
+.portfolio {
   max-width: 1600px;
 }
 
@@ -164,9 +164,7 @@ img {
 }
 
 /* Параметры заголовков h2 страницы index.html*/
-.section-title {
-  margin: 0px;
-
+.title {
   color: var(--text-header);
   font-weight: bold;
   font-size: 36px;
@@ -216,7 +214,7 @@ img {
 }
 
 /* Параметры секции Шапка */
-.section-primary {
+.primary {
   margin-top: 0px;
   margin-bottom: 0px;
   padding: 200px 0px;
@@ -231,7 +229,7 @@ img {
 }
 
 /* Параметры заголовка h1 на странице Studio */
-.primary-title {
+.primary > .title {
   margin-bottom: 30px;
 
   color: var(--text-white);
@@ -260,14 +258,12 @@ img {
   cursor: pointer;
 }
 
-/* Параметры заголовка в секции Особенности */
-.section-features .section-title {
-  margin: 0px;
+/* Параметры заголовка h2 в секции Особенности для того, чтобы скрыть */
+.features > .title {
   color: var(--text-white);
 }
 
-/* Параметры заголовков h3 страницы index.html */
-.features-item {
+.features-card > .title {
   margin-bottom: 10px;
 
   color: var(--text-header);
@@ -312,7 +308,7 @@ img {
 }
 
 /* Параметры заголовка в секции Чем мы занимаемся */
-.section-activity .section-title {
+.activity .title {
   margin-bottom: 50px;
 }
 
@@ -323,12 +319,12 @@ img {
 }
 
 /* Параметры секции Наша команда */
-.section-team {
+.team {
   background-color: var(--bgd-second);
 }
 
 /* Параметры заголовка в секции Наша команда */
-.section-team .section-title {
+.team .title {
   margin-bottom: 50px;
 }
 
@@ -367,7 +363,7 @@ img {
 
 /* Футтер пока не делаю флексом, пока нет остального конента в нем */
 /* Параметры для строк адреса */
-.section-footer .container,
+.footer .container,
 .footer-list {
   display: flex;
 }
@@ -395,13 +391,13 @@ img {
   margin-bottom: 9px;
 }
 /* Паддинг для футтера */
-.section-footer {
+.footer {
   padding-top: 60px;
   padding-bottom: 60px;
   text-align: start;
 }
 
-.section-footer .logo {
+.footer .logo {
   display: block;
   margin-bottom: 20px;
 }
@@ -515,7 +511,7 @@ img {
 }
 
 /* Скрываем заголовок секции Портфолио цветом в фон */
-.section-portfolio h1 {
+.portfolio h1 {
   color: var(--text-white);
 }
 
