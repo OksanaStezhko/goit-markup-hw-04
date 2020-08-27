@@ -65,8 +65,9 @@ img {
 
 .flexbox {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  /* align-items: center; */
+  /* justify-content: space-between; */
 }
 
 /* Марджины для секций и центрирование */
@@ -170,11 +171,13 @@ img {
 
 /* Параметры логотипа */
 .logo {
+  margin: 0px;
   font-family: Raleway, sans-serif;
   color: var(--text-header);
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
+  text-decoration: none;
 }
 
 /* Цвет первой части логотипа */
@@ -204,9 +207,9 @@ img {
 }
 
 /*  hover и focus для ссылок навигации по сайту*/
-.link.current,
-.link:hover,
-.link:focus {
+.header .link.current,
+.header .link:hover,
+.header .link:focus {
   color: var(--text-accent);
 }
 
@@ -255,6 +258,11 @@ img {
   cursor: pointer;
 }
 
+.features-list,
+.header .flexbox {
+  justify-content: space-between;
+}
+
 /* Параметры заголовка h2 в секции Особенности для того, чтобы скрыть */
 .features > .title {
   color: var(--text-white);
@@ -272,7 +280,8 @@ img {
 
 /* Параметры пункта списка Особенности */
 .features-card {
-  width: 270px;
+  /* width: 270px; */
+  width: calc((100% - 30px * 3) / 4);
   text-align: start;
   line-height: 1.71;
 }
@@ -315,6 +324,10 @@ img {
   height: 294px;
 }
 
+.activity-card:not(:nth-child(3n)) {
+  margin-right: 30px;
+}
+
 /* Параметры секции Наша команда */
 .team {
   background-color: var(--bgd-second);
@@ -333,11 +346,16 @@ img {
 
 /* Параметры пунктов в списке секции Наша команда */
 .team-card {
-  width: 270px;
+  width: calc((100% - 30px * 3) / 4);
   height: 368px;
+
   text-align: center;
   background-color: var(--bgd-primary);
   border-radius: 0px 0px 4px 4px;
+}
+
+.team-card:not(:nth-child(4n)) {
+  margin-right: 30px;
 }
 
 /*Параметры заголовка под фото членов команды  */
@@ -401,7 +419,7 @@ img {
 }
 
 .footer-contacts {
-  width: 231px;
+  min-width: 231px;
   margin-right: 70px;
 }
 
@@ -468,8 +486,8 @@ img {
 
 /* Отностительные размеры для пуктов контейнера */
 .portfolio-card {
-  /* width: calc((100%- 2 * 30px) / 3); */
-  width: 370px;
+  width: calc((100% - 2 * 30px) / 3);
+  /* width: 370px; */
 }
 
 /* Параметры конопок-фильтров в портфолио  */
