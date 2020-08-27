@@ -21,7 +21,7 @@
   --text-header: #212121;
   --text-accent: #2196f3;
   --text-white: #ffffff;
-  --text-adress: rgba(255, 255, 255, 0.6);
+  --text-address: rgba(255, 255, 255, 0.6);
   --bgd-primary: #ffffff;
   --bgd-second: #f5f4fa;
   --bgd-accent: #2196f3;
@@ -158,8 +158,8 @@ img {
 }
 
 /* Правые марджины внутри списков из nav и списка контактов */
-.studio-list-item:not(:last-child),
-.studio-contacts-item:not(:last-child) {
+.studio-list-page > .item:not(:last-child),
+.studio-list-contacts > .item:not(:last-child) {
   margin-right: 50px;
 }
 
@@ -191,18 +191,18 @@ img {
 }
 
 /* Параметры ссылок навигации по сайту */
-.studio-list-item .link {
+.studio-list-page .link {
   color: var(--text-header);
 }
 
 /* Параметры ссылок для обратной связи */
-.studio-contacts-item .link {
+.studio-list-contacts .link {
   color: var(--text-main);
 }
 
 /* Общие параметры для двух списков верхней линии */
-.studio-list,
-.studio-contacts {
+.studio-list-page,
+.studio-list-contacts {
   letter-spacing: 0.02em;
 }
 
@@ -329,7 +329,7 @@ img {
 }
 
 /* Контейнер для подписей в пунктах - карточках Наша команда */
-.team-card-caption {
+.team-card-title {
   padding-top: 30px;
   padding-bottom: 30px;
 }
@@ -344,7 +344,7 @@ img {
 }
 
 /*Параметры заголовка под фото членов команды  */
-.team-caption {
+.team-card-title > .title {
   margin-bottom: 10px;
 
   color: var(--text-header);
@@ -364,11 +364,12 @@ img {
 /* Футтер пока не делаю флексом, пока нет остального конента в нем */
 /* Параметры для строк адреса */
 .footer .container,
-.footer-list {
+.social-list {
   display: flex;
 }
 
-.adress-mail {
+.address-mail {
+  margin-top: 0px;
   margin-bottom: 9px;
 
   color: var(--text-white);
@@ -377,17 +378,17 @@ img {
   line-height: 1.71;
 }
 
-.adress-email,
-.adress-tel {
+.address-email,
+.address-tel {
   display: block;
 
-  color: var(--text-adress);
+  color: var(--text-address);
   font-style: normal;
   font-weight: 400;
   line-height: 1.71;
 }
 
-.adress-email {
+.address-email {
   margin-bottom: 9px;
 }
 /* Паддинг для футтера */
@@ -413,7 +414,7 @@ img {
   margin-bottom: 20px;
 }
 
-.footer-item::after {
+.sosial-item::after {
   display: inline-block;
   margin-right: 30px;
   content: '';
@@ -425,20 +426,20 @@ img {
   background-position: center;
 }
 
-.footer-item:nth-child(1)::after {
+.sosial-item:nth-child(1)::after {
   background-image: url(../images/instagram.svg);
 }
-.footer-item:nth-child(2)::after {
+.sosial-item:nth-child(2)::after {
   background-image: url(../images/twitter.svg);
 }
-.footer-item:nth-child(3)::after {
+.sosial-item:nth-child(3)::after {
   background-image: url(../images/facebook.svg);
 }
-.footer-item:nth-child(4)::after {
+.sosial-item:nth-child(4)::after {
   background-image: url(../images/linkedin.svg);
 }
 
-.footer-item:not(:nth-last-child()) {
+.sosial-item:not(:nth-last-child()) {
   margin-right: 10px;
 }
 /* Параметры для страницы портфолио */
@@ -447,7 +448,7 @@ img {
 }
 
 /* Делаю многострочный флекс-контейнер */
-.portfolio-item {
+.portfolio-list {
   flex-wrap: wrap;
 }
 
@@ -475,7 +476,7 @@ img {
 }
 
 /* Параметры конопок-фильтров в портфолио  */
-.filter-button {
+.portfolio-filter .button {
   align-items: flex-start;
   margin-right: 8px;
   padding: 6px 22px;
@@ -493,8 +494,8 @@ img {
   cursor: pointer;
 }
 
-.filter-button:hover,
-.filter-button:focus {
+.portfolio-filter .button:hover,
+.portfolio-filter .button:focus {
   color: var(--text-white);
   background-color: var(--bgd-accent);
 }
@@ -516,7 +517,7 @@ img {
 }
 
 /* Делаю бордер для части карточки */
-.portfolio-card-caption {
+.portfolio-card-title {
   padding: 20px 24px;
   border-right: 1px solid var(--bgd-border);
   border-bottom: 1px solid var(--bgd-border);
@@ -527,7 +528,7 @@ img {
 }
 
 /*  Параметры пунктов фильтров для портфолио */
-.filter-item {
+.portfolio-card-title .text {
   color: var(--text-main);
   font-weight: 400;
   font-size: 16px;
