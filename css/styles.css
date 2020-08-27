@@ -21,7 +21,7 @@
   --text-header: #212121;
   --text-accent: #2196f3;
   --text-white: #ffffff;
-  --text-adress: rgba(255, 255, 255, 0.6);
+  --text-address: rgba(255, 255, 255, 0.6);
   --bgd-primary: #ffffff;
   --bgd-second: #f5f4fa;
   --bgd-accent: #2196f3;
@@ -65,8 +65,9 @@ img {
 
 .flexbox {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  /* align-items: center; */
+  /* justify-content: space-between; */
 }
 
 /* Марджины для секций и центрирование */
@@ -89,13 +90,13 @@ img {
 }
 
 /* Доп.параметры для контейнера футтера */
-.section-footer {
+.footer {
   padding-top: 60px;
   padding-left: 60px;
 }
 
 /* Доп.параметры для контейнера шапки */
-.studio-header {
+.header > .container {
   padding-top: 24px;
   padding-bottom: 25px;
 }
@@ -111,44 +112,41 @@ img {
 }
 
 /* Параметры фона секций шапка и подвал */
-.section-primary,
-.section-footer {
+.primary,
+.footer {
   background-color: var(--bgd-header-footer);
 }
 
 /* Паддинги для секций */
-.section-features,
-.section-team,
-.section-portfolio {
+.features,
+.team,
+.portfolio {
   padding-top: 94px;
   padding-bottom: 94px;
 }
 
 /* Паддинг секции "Чем мы занимаемся" */
-.section-activity {
+.activity {
   padding-bottom: 94px;
 }
-/* Пока не знаю как правильно скрыть заголовок h1 в секции section-portfolio, ставлю на 24px (высота заголовка h1) меньше верхний паддинг */
+/*ставлю на 24px (высота заголовка h1) меньше верхний паддинг */
 /* так как расстояние между секциями должно быть 94px и делаю цвет таких загоовков в цвет фона */
-.section-portfolio {
+.portfolio {
   padding-top: 70px;
   border-top: 1px solid var(--bgd-line);
 }
-/* Пока не знаю как скрыть заголовок h2 в секции section-features, ставлю на 41px (высота заголовка h1) меньше верхний паддинг */
+/* ставлю на 41px (высота заголовка h1) меньше верхний паддинг */
 /* так как расстояние между секциями должно быть 94px  и делаю цвет таких загоовков в цвет фона */
-.section-features {
+.features {
   padding-top: 53px;
 }
 
-/* пока не понимаю, как ограничить заливку нужным размером, как это должно выглядеть */
-/* поэтому оставляю ширину секций, имеющих больший размер, чем основной у контейнеров: Шапка, */
-/* Подвал и Наша команда  */
 /* Есть линия на странице портфолио между Верхней линией и Шапкой, как ограничить ее длину без этого параметра */
-.section-header,
-.section-primary,
-.section-team,
-.section-footer,
-.section-portfolio {
+.header,
+.primary,
+.team,
+.footer,
+.portfolio {
   max-width: 1600px;
 }
 
@@ -158,15 +156,13 @@ img {
 }
 
 /* Правые марджины внутри списков из nav и списка контактов */
-.studio-list-item:not(:last-child),
-.studio-contacts-item:not(:last-child) {
+.studio-list-page > .item:not(:last-child),
+.studio-list-contacts > .item:not(:last-child) {
   margin-right: 50px;
 }
 
 /* Параметры заголовков h2 страницы index.html*/
-.section-title {
-  margin: 0px;
-
+.title {
   color: var(--text-header);
   font-weight: bold;
   font-size: 36px;
@@ -175,11 +171,13 @@ img {
 
 /* Параметры логотипа */
 .logo {
+  margin: 0px;
   font-family: Raleway, sans-serif;
   color: var(--text-header);
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
+  text-decoration: none;
 }
 
 /* Цвет первой части логотипа */
@@ -193,31 +191,31 @@ img {
 }
 
 /* Параметры ссылок навигации по сайту */
-.studio-list-item .link {
+.studio-list-page .link {
   color: var(--text-header);
 }
 
 /* Параметры ссылок для обратной связи */
-.studio-contacts-item .link {
+.studio-list-contacts .link {
   color: var(--text-main);
 }
 
 /* Общие параметры для двух списков верхней линии */
-.studio-list,
-.studio-contacts {
+.studio-list-page,
+.studio-list-contacts {
   letter-spacing: 0.02em;
   font-weight: 500;
 }
 
 /*  hover и focus для ссылок навигации по сайту*/
-.link.current,
-.link:hover,
-.link:focus {
+.header .link.current,
+.header .link:hover,
+.header .link:focus {
   color: var(--text-accent);
 }
 
 /* Параметры секции Шапка */
-.section-primary {
+.primary {
   margin-top: 0px;
   margin-bottom: 0px;
   padding: 200px 0px;
@@ -232,7 +230,7 @@ img {
 }
 
 /* Параметры заголовка h1 на странице Studio */
-.primary-title {
+.primary > .title {
   margin-bottom: 30px;
 
   color: var(--text-white);
@@ -261,14 +259,17 @@ img {
   cursor: pointer;
 }
 
-/* Параметры заголовка в секции Особенности */
-.section-features .section-title {
-  margin: 0px;
+.features-list,
+.header .flexbox {
+  justify-content: space-between;
+}
+
+/* Параметры заголовка h2 в секции Особенности для того, чтобы скрыть */
+.features > .title {
   color: var(--text-white);
 }
 
-/* Параметры заголовков h3 страницы index.html */
-.features-item {
+.features-card > .title {
   margin-bottom: 10px;
 
   color: var(--text-header);
@@ -280,7 +281,8 @@ img {
 
 /* Параметры пункта списка Особенности */
 .features-card {
-  width: 270px;
+  /* width: 270px; */
+  width: calc((100% - 30px * 3) / 4);
   text-align: start;
   line-height: 1.71;
 }
@@ -313,7 +315,7 @@ img {
 }
 
 /* Параметры заголовка в секции Чем мы занимаемся */
-.section-activity .section-title {
+.activity .title {
   margin-bottom: 50px;
 }
 
@@ -323,33 +325,42 @@ img {
   height: 294px;
 }
 
+.activity-card:not(:nth-child(3n)) {
+  margin-right: 30px;
+}
+
 /* Параметры секции Наша команда */
-.section-team {
+.team {
   background-color: var(--bgd-second);
 }
 
 /* Параметры заголовка в секции Наша команда */
-.section-team .section-title {
+.team .title {
   margin-bottom: 50px;
 }
 
 /* Контейнер для подписей в пунктах - карточках Наша команда */
-.team-card-caption {
+.team-card-title {
   padding-top: 30px;
   padding-bottom: 30px;
 }
 
 /* Параметры пунктов в списке секции Наша команда */
 .team-card {
-  width: 270px;
+  width: calc((100% - 30px * 3) / 4);
   height: 368px;
+
   text-align: center;
   background-color: var(--bgd-primary);
   border-radius: 0px 0px 4px 4px;
 }
 
+.team-card:not(:nth-child(4n)) {
+  margin-right: 30px;
+}
+
 /*Параметры заголовка под фото членов команды  */
-.team-caption {
+.team-card-title > .title {
   margin-bottom: 10px;
 
   color: var(--text-header);
@@ -359,7 +370,7 @@ img {
 }
 
 /* Параметры для записи - должности члена команды */
-.team-position {
+.team-card-title > .text {
   color: var(--text-main);
   font-weight: normal;
   font-size: 16px;
@@ -368,12 +379,13 @@ img {
 
 /* Футтер пока не делаю флексом, пока нет остального конента в нем */
 /* Параметры для строк адреса */
-.section-footer .container,
-.footer-list {
+.footer .container,
+.social-list {
   display: flex;
 }
 
-.adress-mail {
+.address-mail {
+  margin-top: 0px;
   margin-bottom: 9px;
 
   color: var(--text-white);
@@ -382,33 +394,33 @@ img {
   line-height: 1.71;
 }
 
-.adress-email,
-.adress-tel {
+.address-email,
+.address-tel {
   display: block;
 
-  color: var(--text-adress);
+  color: var(--text-address);
   font-style: normal;
   font-weight: 400;
   line-height: 1.71;
 }
 
-.adress-email {
+.address-email {
   margin-bottom: 9px;
 }
 /* Паддинг для футтера */
-.section-footer {
+.footer {
   padding-top: 60px;
   padding-bottom: 60px;
   text-align: start;
 }
 
-.section-footer .logo {
+.footer .logo {
   display: block;
   margin-bottom: 20px;
 }
 
 .footer-contacts {
-  width: 231px;
+  min-width: 231px;
   margin-right: 70px;
 }
 
@@ -418,7 +430,7 @@ img {
   margin-bottom: 20px;
 }
 
-.footer-item::after {
+.sosial-item::after {
   display: inline-block;
   margin-right: 30px;
   content: '';
@@ -430,20 +442,20 @@ img {
   background-position: center;
 }
 
-.footer-item:nth-child(1)::after {
+.sosial-item:nth-child(1)::after {
   background-image: url(../images/instagram.svg);
 }
-.footer-item:nth-child(2)::after {
+.sosial-item:nth-child(2)::after {
   background-image: url(../images/twitter.svg);
 }
-.footer-item:nth-child(3)::after {
+.sosial-item:nth-child(3)::after {
   background-image: url(../images/facebook.svg);
 }
-.footer-item:nth-child(4)::after {
+.sosial-item:nth-child(4)::after {
   background-image: url(../images/linkedin.svg);
 }
 
-.footer-item:not(:nth-last-child()) {
+.sosial-item:not(:nth-last-child()) {
   margin-right: 10px;
 }
 /* Параметры для страницы портфолио */
@@ -452,7 +464,7 @@ img {
 }
 
 /* Делаю многострочный флекс-контейнер */
-.portfolio-item {
+.portfolio-list {
   flex-wrap: wrap;
 }
 
@@ -475,12 +487,12 @@ img {
 
 /* Отностительные размеры для пуктов контейнера */
 .portfolio-card {
-  /* width: calc((100%- 2 * 30px) / 3); */
-  width: 370px;
+  width: calc((100% - 2 * 30px) / 3);
+  /* width: 370px; */
 }
 
 /* Параметры конопок-фильтров в портфолио  */
-.filter-button {
+.portfolio-filter .button {
   align-items: flex-start;
   margin-right: 8px;
   padding: 6px 22px;
@@ -498,8 +510,8 @@ img {
   cursor: pointer;
 }
 
-.filter-button:hover,
-.filter-button:focus {
+.portfolio-filter .button:hover,
+.portfolio-filter .button:focus {
   color: var(--text-white);
   background-color: var(--bgd-accent);
 }
@@ -516,12 +528,12 @@ img {
 }
 
 /* Скрываем заголовок секции Портфолио цветом в фон */
-.section-portfolio h1 {
+.portfolio h1 {
   color: var(--text-white);
 }
 
 /* Делаю бордер для части карточки */
-.portfolio-card-caption {
+.portfolio-card-title {
   padding: 20px 24px;
   border-right: 1px solid var(--bgd-border);
   border-bottom: 1px solid var(--bgd-border);
@@ -532,7 +544,7 @@ img {
 }
 
 /*  Параметры пунктов фильтров для портфолио */
-.filter-item {
+.portfolio-card-title .text {
   color: var(--text-main);
   font-weight: 400;
   font-size: 16px;
