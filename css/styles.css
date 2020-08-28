@@ -29,6 +29,7 @@
   --bgd-line: #ececec;
   --bgd-header-footer: #2f303a;
   --bdg-social: rgba(255, 255, 255, 0.1);
+  --bgd-icon: #afb1b8;
 }
 /* Пока отдельно указала белый цвет  для фона и для текста */
 /* Разные переменные, если нужно будет поменять переменную цвета текста, не затронет цвет фона и наоборот */
@@ -120,6 +121,7 @@ img {
 /* Паддинги для секций */
 .features,
 .team,
+.clients,
 .portfolio {
   padding-top: 94px;
   padding-bottom: 94px;
@@ -335,7 +337,7 @@ img {
 }
 
 /* Параметры заголовка в секции Наша команда */
-.team .containter > .title {
+.team > .container > .title {
   margin-bottom: 50px;
 }
 
@@ -377,6 +379,29 @@ img {
   font-weight: normal;
   font-size: 16px;
   line-height: 1.19;
+}
+
+/* Параметры элементов секции постоянные клиенты */
+.clients-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.clients .title {
+  margin-bottom: 50px;
+}
+
+.clients-list > .item {
+  display: block;
+  width: calc((100% - 30px * 5) / 6);
+  height: 90px;
+  border: 1px solid var(--bgd-icon);
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.clients-list .item:not(:nth-child(6n)) {
+  margin-right: 30px;
 }
 
 .footer .container,
@@ -428,31 +453,6 @@ img {
   color: var(--text-white);
   text-transform: uppercase;
   margin-bottom: 20px;
-}
-
-.sosial-item::after {
-  display: inline-block;
-  margin-right: 30px;
-  content: '';
-  height: 44px;
-  width: 44px;
-  background-color: var(--bdg-social);
-  border-radius: 50%;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.sosial-item:nth-child(1)::after {
-  background-image: url(../images/instagram.svg);
-}
-.sosial-item:nth-child(2)::after {
-  background-image: url(../images/twitter.svg);
-}
-.sosial-item:nth-child(3)::after {
-  background-image: url(../images/facebook.svg);
-}
-.sosial-item:nth-child(4)::after {
-  background-image: url(../images/linkedin.svg);
 }
 
 .sosial-item:not(:nth-last-child()) {
