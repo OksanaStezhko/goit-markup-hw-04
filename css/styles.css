@@ -63,18 +63,12 @@ img {
   margin: 0px;
 }
 
-/* Параметры для контейнеров верхней линии */
-
 .flexbox {
   display: flex;
 }
 
 .wrap {
   flex-wrap: wrap;
-}
-
-.topline.flexbox {
-  align-items: center;
 }
 
 /* Марджины для секций и центрирование */
@@ -85,7 +79,6 @@ img {
 }
 
 /* Параметры основного контейнера макета */
-
 .container {
   width: 1200px;
   margin-left: auto;
@@ -98,12 +91,6 @@ img {
 .footer {
   padding-top: 60px;
   padding-left: 60px;
-}
-
-/* Доп.параметры для контейнера шапки */
-.header > .container {
-  padding-top: 24px;
-  padding-bottom: 25px;
 }
 
 /* Общие параметры для страниц index и portfolio */
@@ -153,13 +140,19 @@ img {
   margin-left: auto;
 }
 
+.topline {
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 24px;
+  padding-bottom: 25px;
+}
 /* Правый марджин между логотипом и ссылками на страницы в основном nav */
 .studio-nav .logo {
   margin-right: 93px;
 }
 
 .studio-nav {
-  align-items: baseline;
+  align-items: center;
 }
 
 /* Правые марджины внутри списков из nav и списка контактов */
@@ -283,8 +276,7 @@ img {
   cursor: pointer;
 }
 
-.features-list,
-.header .flexbox {
+.features-list {
   justify-content: space-between;
 }
 
