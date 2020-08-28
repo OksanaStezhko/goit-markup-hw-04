@@ -87,8 +87,6 @@ img {
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px;
-
-  /* outline: 2px solid tomato !important; */
 }
 
 /* Доп.параметры для контейнера футтера */
@@ -143,13 +141,10 @@ img {
   padding-top: 53px;
 }
 
-/* Есть линия на странице портфолио между Верхней линией и Шапкой, как ограничить ее длину без этого параметра */
-.header,
-.primary,
-.team,
-.footer,
-.portfolio {
+.background {
   max-width: 1600px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 /* Правый марджин между логотипом и ссылками на страницы в основном nav */
@@ -217,7 +212,7 @@ img {
 }
 
 /* Параметры секции Шапка */
-.primary {
+.background {
   margin-top: 0px;
   margin-bottom: 0px;
   padding: 200px 0px;
@@ -232,7 +227,7 @@ img {
 }
 
 /* Параметры заголовка h1 на странице Studio */
-.primary > .title {
+.primary .title {
   margin-bottom: 30px;
 
   color: var(--text-white);
@@ -245,7 +240,7 @@ img {
 }
 
 /* Параметры кнопки в секции Шапка*/
-.primary-button {
+.primary .button {
   padding: 10px;
   min-width: 200px;
   color: var(--text-white);
@@ -322,9 +317,12 @@ img {
 }
 
 /* Параметры пункта списка  в секции Чем мы занимаемся */
+/* Делаю центрирование img в div, важно при использовании*/
+/* calc для изменения ширины основного контейнера */
 .activity-card {
-  width: 370px;
-  height: 294px;
+  display: flex;
+  justify-content: center;
+  width: calc((100% - 30px * 2) / 3);
 }
 
 .activity-card:not(:nth-child(3n)) {
@@ -337,10 +335,14 @@ img {
 }
 
 /* Параметры заголовка в секции Наша команда */
-.team .title {
+.team .containter > .title {
   margin-bottom: 50px;
 }
 
+.team-card-image {
+  display: flex;
+  justify-content: center;
+}
 /* Контейнер для подписей в пунктах - карточках Наша команда */
 .team-card-title {
   padding-top: 30px;
@@ -350,8 +352,6 @@ img {
 /* Параметры пунктов в списке секции Наша команда */
 .team-card {
   width: calc((100% - 30px * 3) / 4);
-  height: 368px;
-
   text-align: center;
   background-color: var(--bgd-primary);
   border-radius: 0px 0px 4px 4px;
@@ -379,8 +379,6 @@ img {
   line-height: 1.19;
 }
 
-/* Футтер пока не делаю флексом, пока нет остального конента в нем */
-/* Параметры для строк адреса */
 .footer .container,
 .social-list {
   display: flex;
@@ -479,20 +477,6 @@ img {
   /* cursor: pointer; */
 }
 
-/* Марджины для сетки многострочного контейнера */
-.portfolio-card:not(:nth-child(3n)) {
-  margin-right: 30px;
-}
-.portfolio-card:not(:nth-last-child(-n + 3)) {
-  margin-bottom: 30px;
-}
-
-/* Отностительные размеры для пуктов контейнера */
-.portfolio-card {
-  width: calc((100% - 2 * 30px) / 3);
-  /* width: 370px; */
-}
-
 /* Параметры конопок-фильтров в портфолио  */
 .portfolio-filter .button {
   align-items: flex-start;
@@ -518,6 +502,21 @@ img {
   background-color: var(--bgd-accent);
 }
 
+/* Марджины для сетки многострочного контейнера */
+.portfolio-card:not(:nth-child(3n)) {
+  margin-right: 30px;
+}
+.portfolio-card:not(:nth-last-child(-n + 3)) {
+  margin-bottom: 30px;
+}
+
+/* Размеры для карточки портфолио */
+/* Без фиксированной высоты при добавлении новой карточки меняется размер в последнем ряду */
+.portfolio-card {
+  width: calc((100% - 2 * 30px) / 3);
+  height: 404px;
+}
+
 /* Заголовки под карточками в списке Портфолио */
 .portfolio-card .title {
   margin-bottom: 4px;
@@ -530,8 +529,15 @@ img {
 }
 
 /* Скрываем заголовок секции Портфолио цветом в фон */
-.portfolio h1 {
+.portfolio > .title {
   color: var(--text-white);
+}
+
+/* Делаю центрирование img в div, важно при использовании calc для изменения
+ ширины основного контейнера */
+.portfolio-card-image {
+  display: flex;
+  justify-content: center;
 }
 
 /* Делаю бордер для части карточки */
@@ -542,7 +548,6 @@ img {
   border-left: 1px solid var(--bgd-border);
 
   text-align: left;
-  /* outline: 2px solid red !important; */
 }
 
 /*  Параметры пунктов фильтров для портфолио */
@@ -554,3 +559,11 @@ img {
 }
 
 /* ...........Для тестирования.................. */
+
+/* .container,
+.features-card,
+.team-card,
+.activity-card,
+.portfolio-card {
+  outline: 2px solid green !important;
+} */
