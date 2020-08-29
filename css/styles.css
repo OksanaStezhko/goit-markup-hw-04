@@ -80,7 +80,7 @@ img {
 
 /* Параметры основного контейнера макета */
 .container {
-  width: 1500px;
+  width: 1200px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 15px;
@@ -307,10 +307,6 @@ img {
   width: 70px;
   height: 70px;
 }
-/* Параметры списка секции Чем мы занимаемся */
-.activity-list {
-  align-items: flex-end;
-}
 
 /* Параметры заголовка в секции Чем мы занимаемся */
 .activity .title {
@@ -356,6 +352,8 @@ img {
 
   background-color: var(--bgd-primary);
   border-radius: 0px 0px 4px 4px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .team-card:not(:nth-child(4n)) {
@@ -408,12 +406,15 @@ img {
   --color4: var(--text-white);
 }
 
+.clients .item {
+  justify-content: center;
+  align-items: center;
+}
 .clients .title {
   margin-bottom: 50px;
 }
 
 .clients-list > .item {
-  display: block;
   width: calc((100% - 30px * 5) / 6);
   height: 90px;
   border: 1px solid var(--bgd-icon);
@@ -423,13 +424,6 @@ img {
 
 .clients-list .item:not(:nth-child(6n)) {
   margin-right: 30px;
-}
-
-.client-link {
-  width: 170px;
-  height: 90px;
-  justify-content: center;
-  align-items: center;
 }
 
 .client-link:hover {
@@ -551,7 +545,16 @@ img {
 /* Без фиксированной высоты при добавлении новой карточки меняется размер в последнем ряду */
 .portfolio-card {
   width: calc((100% - 2 * 30px) / 3);
-  height: 404px;
+
+  display: flex;
+  justify-content: center;
+}
+
+.portfolio-link {
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
 }
 
 /* Заголовки под карточками в списке Портфолио */
@@ -570,21 +573,12 @@ img {
   color: var(--text-white);
 }
 
-/* Делаю центрирование img в div, важно при использовании calc для изменения
- ширины основного контейнера */
-.portfolio-card-image {
-  display: flex;
-  justify-content: center;
-}
-
 /* Делаю бордер для части карточки */
 .portfolio-card-title {
   padding: 20px 24px;
   border-right: 1px solid var(--bgd-border);
   border-bottom: 1px solid var(--bgd-border);
   border-left: 1px solid var(--bgd-border);
-
-  text-align: left;
 }
 
 /*  Параметры пунктов фильтров для портфолио */
