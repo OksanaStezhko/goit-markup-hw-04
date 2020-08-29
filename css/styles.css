@@ -80,17 +80,11 @@ img {
 
 /* Параметры основного контейнера макета */
 .container {
-  width: 1200px;
+  width: 1500px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px;
-}
-
-/* Доп.параметры для контейнера футтера */
-.footer {
-  padding-top: 60px;
-  padding-left: 60px;
 }
 
 /* Общие параметры для страниц index и portfolio */
@@ -171,13 +165,11 @@ img {
 
 /* Параметры логотипа */
 .logo {
-  margin: 0px;
   font-family: Raleway, sans-serif;
   color: var(--text-header);
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
-  text-decoration: none;
 }
 
 /* Цвет первой части логотипа */
@@ -228,7 +220,7 @@ img {
 .header .link:hover,
 .header .link:focus {
   color: var(--text-accent);
-  --color1: var(--text-accent);
+  --color3: var(--text-accent);
 }
 
 /* Параметры секции Шапка */
@@ -302,29 +294,19 @@ img {
   text-align: start;
   line-height: 1.71;
 }
-.features-card::before {
-  display: block;
-  content: '';
-  height: 120px;
-  margin-bottom: 30px;
-  background-repeat: no-repeat;
-  background-position: center;
+
+.features-image {
   background-color: var(--bgd-second);
+  margin-bottom: 30px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  text-align: center;
 }
 
-.features-card:nth-child(1)::before {
-  background-image: url(../images/feature1.svg);
+.features-icon {
+  width: 70px;
+  height: 70px;
 }
-.features-card:nth-child(2)::before {
-  background-image: url(../images/feature2.svg);
-}
-.features-card:nth-child(3)::before {
-  background-image: url(../images/feature3.svg);
-}
-.features-card:nth-child(4)::before {
-  background-image: url(../images/feature4.svg);
-}
-
 /* Параметры списка секции Чем мы занимаемся */
 .activity-list {
   align-items: flex-end;
@@ -368,8 +350,10 @@ img {
 
 /* Параметры пунктов в списке секции Наша команда */
 .team-card {
+  flex-direction: column;
+  align-items: center;
   width: calc((100% - 30px * 3) / 4);
-  text-align: center;
+
   background-color: var(--bgd-primary);
   border-radius: 0px 0px 4px 4px;
 }
@@ -394,6 +378,34 @@ img {
   font-weight: normal;
   font-size: 16px;
   line-height: 1.19;
+  margin-bottom: 10px;
+}
+
+.social-item:not(:nth-child(4)) {
+  margin-right: 10px;
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.social-link {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+.team .social-link {
+  background-color: var(--bgd-footer-icon);
+  --color4: var(--bgd-icon);
+}
+
+.team .social-link:hover {
+  background-color: var(--bgd-accent);
+  --color4: var(--text-white);
 }
 
 .clients .title {
@@ -413,13 +425,15 @@ img {
   margin-right: 30px;
 }
 
-.client-icon {
+.client-link {
   width: 170px;
   height: 90px;
+  justify-content: center;
+  align-items: center;
 }
 
-.client-icon:hover {
-  --color3: var(--text-accent);
+.client-link:hover {
+  --color4: var(--bgd-accent);
 }
 
 .address-mail {
@@ -446,16 +460,14 @@ img {
   margin-bottom: 9px;
 }
 
-/* цетрирование по вертикали для футтера */
-.footer .flexbox {
-  align-items: baseline;
-}
-
 /* Паддинг для футтера */
 .footer {
   padding-top: 60px;
   padding-bottom: 60px;
-  text-align: start;
+}
+
+.footer .flexbox {
+  align-items: baseline;
 }
 
 .footer .logo {
@@ -464,34 +476,30 @@ img {
 }
 
 .footer-contacts {
-  min-width: 231px;
   margin-right: 70px;
+  min-width: 231px;
+  text-align: start;
 }
 
 .footer-social > .text {
+  margin-bottom: 20px;
+  text-align: start;
   color: var(--text-white);
   text-transform: uppercase;
   font-weight: 700;
   line-height: 1.14;
-
-  margin-bottom: 20px;
 }
 
-.social-item:not(:nth-child(4n)) {
-  margin-right: 10px;
+.footer .social-link {
+  background-color: var(--bgd-footer-icon);
+  --color4: var(--text-white);
+  align-items: center;
 }
 
-.social-icon {
-  width: 44px;
-  height: 44px;
-  --color2: var(--bgd-footer-icon);
-  --color3: var(--text-white);
+.footer .social-link:hover {
+  background-color: var(--bgd-accent);
 }
 
-.social-icon:hover {
-  --color2: var(--bgd-accent);
-  --color3: var(--text-white);
-}
 /* Параметры для страницы портфолио */
 .portfolio-filter {
   justify-content: center;
@@ -595,6 +603,7 @@ img {
 .activity-card,
 .portfolio-card,
 .social-item,
-.footer-social {
+.footer-social,
+.features-image {
   outline: 2px solid green !important;
 }
