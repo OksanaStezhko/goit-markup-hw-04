@@ -549,17 +549,7 @@ img {
 /* Без фиксированной высоты при добавлении новой карточки меняется размер в последнем ряду */
 .portfolio-card {
   width: calc((100% - 2 * 30px) / 3);
-
-  /* display: flex; */
-  /* justify-content: center; */
 }
-
-/* .portfolio-link {
-  flex-direction: column;
-
-  justify-content: center;
-  align-items: center;
-} */
 
 /* Заголовки под карточками в списке Портфолио */
 .portfolio-card .title {
@@ -592,6 +582,15 @@ img {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.87;
+}
+
+.portfolio-link {
+  display: block;
+}
+
+.portfolio-link:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 /* ...........Для тестирования.................. */
