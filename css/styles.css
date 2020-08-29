@@ -57,6 +57,17 @@ img {
   margin: 0px;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 /* Убираем марджины у списков, заголовков, ссылках, адресах по классу nomargin */
 .nomargin,
 .title {
@@ -116,16 +127,9 @@ img {
 .activity {
   padding-bottom: 94px;
 }
-/*ставлю на 24px (высота заголовка h1) меньше верхний паддинг */
-/* так как расстояние между секциями должно быть 94px и делаю цвет таких загоовков в цвет фона */
+
 .portfolio {
-  padding-top: 70px;
   border-top: 1px solid var(--bgd-line);
-}
-/* ставлю на 41px (высота заголовка h1) меньше верхний паддинг */
-/* так как расстояние между секциями должно быть 94px  и делаю цвет таких загоовков в цвет фона */
-.features {
-  padding-top: 53px;
 }
 
 .background {
@@ -546,16 +550,16 @@ img {
 .portfolio-card {
   width: calc((100% - 2 * 30px) / 3);
 
-  display: flex;
-  justify-content: center;
+  /* display: flex; */
+  /* justify-content: center; */
 }
 
-.portfolio-link {
+/* .portfolio-link {
   flex-direction: column;
 
   justify-content: center;
   align-items: center;
-}
+} */
 
 /* Заголовки под карточками в списке Портфолио */
 .portfolio-card .title {
@@ -579,6 +583,7 @@ img {
   border-right: 1px solid var(--bgd-border);
   border-bottom: 1px solid var(--bgd-border);
   border-left: 1px solid var(--bgd-border);
+  text-align: start;
 }
 
 /*  Параметры пунктов фильтров для портфолио */
@@ -591,7 +596,7 @@ img {
 
 /* ...........Для тестирования.................. */
 
-.container,
+/* .container,
 .features-card,
 .team-card,
 .activity-card,
@@ -600,4 +605,4 @@ img {
 .footer-social,
 .features-image {
   outline: 2px solid green !important;
-}
+} */
