@@ -534,9 +534,6 @@ img {
   width: calc((100% - 2 * 30px) / 3);
 }
 
-.portfolio-card-image {
-  display: inline-block;
-}
 /* Заголовки под карточками в портфолио */
 .portfolio-card-title > .title {
   margin-bottom: 4px;
