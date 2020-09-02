@@ -143,8 +143,15 @@ img {
 
 .background {
   max-width: 1600px;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 0px auto;
+  padding: 200px 0px;
+  height: 600px;
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url('../images/primary.jpg');
 }
 
 .topline {
@@ -228,19 +235,10 @@ img {
   --color3: var(--text-accent);
 }
 
-/*Секция Шапка */
-.background {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  padding: 200px 0px;
-
-  height: 600px;
-  background-image: linear-gradient(
-      to right,
-      rgba(47, 48, 58, 0.4),
-      rgba(47, 48, 58, 0.4)
-    ),
-    url('../images/primary.jpg');
+/* Контейнер для заголовка и кноки секции Шапка */
+.primary-box {
+  display: inline-block;
+  width: 696px;
 }
 
 /* Параметры заголовка h1 на странице Studio */
@@ -403,7 +401,6 @@ img {
   margin-right: 30px;
 }
 .client-link {
-  display: inline-flex;
   justify-content: center;
   align-items: center;
   height: 90px;
@@ -537,6 +534,9 @@ img {
   width: calc((100% - 2 * 30px) / 3);
 }
 
+.portfolio-card-image {
+  display: inline-block;
+}
 /* Заголовки под карточками в портфолио */
 .portfolio-card-title > .title {
   margin-bottom: 4px;
@@ -568,7 +568,8 @@ img {
 
 /* Тень при ховере на карточках-ссылках портфолио */
 .portfolio-link {
-  display: block;
+  display: inline-block;
+  width: 370px;
 }
 
 .portfolio-link:hover {
